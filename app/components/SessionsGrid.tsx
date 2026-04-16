@@ -13,13 +13,16 @@ export default function SessionsGrid({ sessions }: SessionsGridProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
       {sessions.map((session, idx) => (
-        <motion.div
+        <motion.a
           key={session.id}
+          href={session.videoUrl || "#"}
+          target={session.videoUrl ? "_blank" : undefined}
+          rel="noopener noreferrer"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: idx * 0.1 }}
-          className="group relative flex flex-col glass-card border-white/5 bg-surface/30 overflow-hidden hover:border-accent/40 hover:shadow-[0_20px_50px_rgba(217,79,43,0.1)] transition-all duration-500"
+          className="group relative flex flex-col glass-card border-white/5 bg-surface/30 overflow-hidden hover:border-accent/40 hover:shadow-[0_20px_50px_rgba(217,79,43,0.1)] transition-all duration-500 cursor-pointer"
         >
           {/* Thumbnail Container */}
           <div className="relative aspect-video overflow-hidden rounded-t-2xl">
@@ -74,7 +77,7 @@ export default function SessionsGrid({ sessions }: SessionsGridProps) {
           
           {/* Subtle Bottom Accent Line */}
           <div className="absolute bottom-0 left-0 w-0 h-1 bg-accent group-hover:w-full transition-all duration-500" />
-        </motion.div>
+        </motion.a>
       ))}
     </div>
   );

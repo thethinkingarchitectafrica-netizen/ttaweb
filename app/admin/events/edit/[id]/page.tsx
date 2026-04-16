@@ -28,6 +28,7 @@ export default function EditEvent({ params }: { params: Promise<{ id: string }> 
     link: "",
     attendance: "",
     is_upcoming: false,
+    event_date: "",
     topics: "",
     flyer_url: ""
   });
@@ -58,6 +59,7 @@ export default function EditEvent({ params }: { params: Promise<{ id: string }> 
           link: data.link || "",
           attendance: data.attendance || "",
           is_upcoming: data.is_upcoming || false,
+          event_date: data.event_date || "",
           topics: data.topics ? data.topics.join(", ") : "",
           flyer_url: data.flyer_url || ""
         });
@@ -90,6 +92,7 @@ export default function EditEvent({ params }: { params: Promise<{ id: string }> 
           link: formData.link,
           attendance: formData.attendance,
           is_upcoming: formData.is_upcoming,
+          event_date: formData.event_date,
           topics: formData.topics.split(",").map(t => t.trim()).filter(t => t !== ""),
           flyer_url: finalFlyerUrl
         })
@@ -142,7 +145,19 @@ export default function EditEvent({ params }: { params: Promise<{ id: string }> 
 
             <div className="grid grid-cols-2 gap-6">
               <div className="flex flex-col gap-2">
-                <label className="small-text uppercase tracking-widest opacity-70">Date</label>
+                <div className="relative">
+                   <Calendar size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-accent opacity-50" />
+                   <input 
+                    type="date"
+                    required
+                    value={formData.event_date}
+                    onChange={e => setFormData({...formData, event_date: e.target.value})}
+                    className="w-full bg-white/5 border border-white/10 rounded-xl p-4 pl-12 focus:ring-1 focus:ring-accent outline-none text-white transition-all [color-scheme:dark]"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <label className="small-text uppercase tracking-widest opacity-70">Display Date (Text)</label>
                 <div className="relative">
                    <Calendar size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-accent opacity-50" />
                    <input 

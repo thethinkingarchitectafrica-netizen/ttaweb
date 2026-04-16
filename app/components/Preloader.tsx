@@ -10,7 +10,7 @@ export default function Preloader({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3200); // 3.2s to account for logo trace + shimmer + sustain
+    }, 2200); // 2.2s — fast enough to feel snappy, long enough for the animation
 
     return () => clearTimeout(timer);
   }, []);

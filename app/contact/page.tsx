@@ -92,15 +92,25 @@ export default function ContactPage() {
         <div className="glass-card p-10 bg-surface/30 border-white/5">
           <h2 className="heading-3 text-accent uppercase tracking-widest mb-8">{partnerships.title}</h2>
           {formStatus === "success" ? (
-             <div className="py-20 text-center animate-in fade-in zoom-in duration-500">
-                <div className="w-16 h-16 bg-accent/20 text-accent rounded-full flex items-center justify-center mx-auto mb-6">
-                   <Mail size={32} />
+             <div className="py-16 text-center flex flex-col items-center gap-6 animate-in fade-in zoom-in duration-500">
+                {/* Animated checkmark ring */}
+                <div className="relative">
+                  <div className="w-20 h-20 rounded-full border-2 border-accent/30 flex items-center justify-center animate-[pulse_2s_ease-in-out_infinite]">
+                    <div className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center">
+                      <svg className="w-8 h-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12" className="animate-[draw_0.6s_ease-out_0.3s_both]" style={{ strokeDasharray: 30, strokeDashoffset: 30, animation: "draw 0.6s ease-out 0.3s forwards" }}/>
+                      </svg>
+                    </div>
+                  </div>
+                  {/* Decorative dots */}
+                  <div className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-accent/40 animate-ping" />
+                  <div className="absolute -bottom-1 -left-1 w-1.5 h-1.5 rounded-full bg-accent/30 animate-ping" style={{ animationDelay: "0.5s" }} />
                 </div>
-                <h3 className="heading-3 mb-2">{partnerships.form.successTitle}</h3>
-                <p className="body-text opacity-60">{partnerships.form.successText}</p>
+                <h3 className="heading-3 text-2xl">{partnerships.form.successTitle}</h3>
+                <p className="body-text opacity-60 max-w-sm">{partnerships.form.successText}</p>
                 <button 
                   onClick={() => setFormStatus("idle")}
-                  className="mt-8 text-accent text-xs font-bold uppercase tracking-widest hover:underline"
+                  className="mt-4 px-6 py-3 text-accent text-xs font-bold uppercase tracking-widest border border-accent/20 rounded-xl hover:bg-accent/10 transition-all"
                 >
                   {partnerships.form.resetButton}
                 </button>

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Logo from "./Logo";
 import GlobalSearch from "./GlobalSearch";
 import { navLinks, footerLinks } from "../lib/content";
@@ -11,6 +11,16 @@ export default function Nav() {
 
   const handleToggle = () => setOpen((prev) => !prev);
   const handleClose = () => setOpen(false);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
 
   return (
     <header className="sticky top-4 z-40 w-full px-4 mb-2">

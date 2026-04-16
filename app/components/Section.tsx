@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import Logo from "./Logo";
+import ScrollReveal from "./ScrollReveal";
 
 type Props = {
   id?: string;
@@ -19,17 +20,21 @@ export default function Section({ id, eyebrow, title, kicker, children, classNam
           <Logo variant="monogram" size={600} animate={false} />
         </div>
       )}
-      <div className="container flex flex-col gap-8 reveal">
-        {(eyebrow || title || kicker) && (
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <div className="flex flex-col">
-              {eyebrow ? <div className="section-eyebrow">{eyebrow}</div> : null}
-              {title ? <h2 className="heading-2 max-w-[20ch]">{title}</h2> : null}
+      <div className="container flex flex-col gap-8">
+        <ScrollReveal>
+          {(eyebrow || title || kicker) && (
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+              <div className="flex flex-col">
+                {eyebrow ? <div className="section-eyebrow">{eyebrow}</div> : null}
+                {title ? <h2 className="heading-2 max-w-[20ch]">{title}</h2> : null}
+              </div>
+              {kicker ? <div className="small-text opacity-50">{kicker}</div> : null}
             </div>
-            {kicker ? <div className="small-text opacity-50">{kicker}</div> : null}
-          </div>
-        )}
-        {children}
+          )}
+        </ScrollReveal>
+        <ScrollReveal delay={0.1}>
+          {children}
+        </ScrollReveal>
       </div>
     </section>
   );

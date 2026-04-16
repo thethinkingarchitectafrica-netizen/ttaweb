@@ -5,6 +5,7 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Preloader from "./components/Preloader";
 import { ToastProvider } from "./components/Toast";
+import BackToTop from "./components/BackToTop";
 import { getSiteConfig } from "./lib/data-service";
 
 const displayFont = MuseoModerno({
@@ -56,6 +57,7 @@ export default function RootLayout({
             <Nav />
             <main className="flex-1">{children}</main>
             <Footer />
+            <BackToTop />
           </Preloader>
         </ToastProvider>
       </body>

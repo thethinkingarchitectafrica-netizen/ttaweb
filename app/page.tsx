@@ -11,6 +11,8 @@ import {
   quotes as staticQuotes,
 } from "./lib/content";
 import SessionsGrid from "./components/SessionsGrid";
+import AnimatedCounter from "./components/AnimatedCounter";
+import ScrollReveal from "./components/ScrollReveal";
 import Image from "next/image";
 import { getSiteConfig, getStats, getEvents, getSessions } from "./lib/data-service";
 
@@ -43,31 +45,39 @@ export default async function Home() {
       {/* 1. HERO SECTION */}
       <Section id="hero" className="pt-24 pb-16 md:pt-32 md:pb-24" watermark={true}>
         <div className="flex flex-col items-center text-center gap-10">
-          <div className="tag reveal" style={{ animationDelay: "100ms" }}>
-            {hero.eyebrow}
-          </div>
-          <h1 className="heading-1 reveal" style={{ animationDelay: "200ms" }}>
-            {hero.title}
-          </h1>
-          <div className="flex flex-col gap-6 items-center reveal" style={{ animationDelay: "300ms" }}>
-            <p className="body-text text-2xl font-medium text-white max-w-[40ch]">
-              {hero.subHeadline}
-            </p>
-            <p className="body-text text-xl max-w-[60ch] opacity-70">
-              {hero.description}
-            </p>
-            <p className="body-text text-xl font-bold text-accent mt-4">
-              {hero.closing}
-            </p>
-          </div>
-          <div className="flex flex-wrap justify-center gap-6 reveal" style={{ animationDelay: "400ms" }}>
-            <a className="button-primary" href={footerLinks.community[0].href}>
-              Join the Community →
-            </a>
-            <a className="button-secondary" href="/events">
-              Register for Next Talk
-            </a>
-          </div>
+          <ScrollReveal delay={0.1}>
+            <div className="tag">
+              {hero.eyebrow}
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={0.2} direction="scale">
+            <h1 className="heading-1">
+              {hero.title}
+            </h1>
+          </ScrollReveal>
+          <ScrollReveal delay={0.3}>
+            <div className="flex flex-col gap-6 items-center">
+              <p className="body-text text-2xl font-medium text-white max-w-[40ch]">
+                {hero.subHeadline}
+              </p>
+              <p className="body-text text-xl max-w-[60ch] opacity-70">
+                {hero.description}
+              </p>
+              <p className="body-text text-xl font-bold text-accent mt-4">
+                {hero.closing}
+              </p>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={0.4}>
+            <div className="flex flex-wrap justify-center gap-6">
+              <a className="button-primary" href={footerLinks.community[0].href}>
+                Join the Community →
+              </a>
+              <a className="button-secondary" href="/events">
+                Register for Next Talk
+              </a>
+            </div>
+          </ScrollReveal>
         </div>
       </Section>
 
@@ -99,7 +109,7 @@ export default async function Home() {
         <div className="bento-grid">
           {stats.map((stat: any) => (
             <div key={stat.label} className="bento-item-small glass-card flex flex-col items-center justify-center gap-3 group hover:ring-1 hover:ring-accent/30 transition-all text-center p-10">
-              <div className="text-6xl font-black text-accent tracking-tighter">{stat.value}</div>
+              <AnimatedCounter value={stat.value} className="text-6xl font-black text-accent tracking-tighter" />
               <div className="small-text opacity-70 tracking-[0.3em] uppercase font-bold text-[11px]">{stat.label}</div>
             </div>
           ))}
