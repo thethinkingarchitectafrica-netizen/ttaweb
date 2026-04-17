@@ -22,7 +22,7 @@ export default async function TeamPage() {
 
       <Section title="The Founder">
         <div className="glass-card flex flex-col md:flex-row gap-10 items-center bg-accent/5 border-accent/20">
-          <div className="w-40 h-40 rounded-3xl bg-accent/10 border border-accent/20 flex items-center justify-center text-5xl font-bold text-accent shrink-0 relative overflow-hidden rotate-3 transition-transform hover:rotate-0">
+          <div className="w-32 h-32 md:w-40 md:h-40 rounded-3xl bg-accent/10 border border-accent/20 flex items-center justify-center text-4xl md:text-5xl font-bold text-accent shrink-0 relative overflow-hidden rotate-3 transition-transform hover:rotate-0">
             {founder.image_url ? (
               <Image src={founder.image_url} alt={founder.name} fill className="object-cover" />
             ) : (

@@ -22,7 +22,7 @@ export default async function EventsPage() {
       <EventsView upcomingEvent={upcomingEvent} pastEvents={pastEvents} />
 
       <Section title="Host a Session">
-        <div className="glass-card bg-surface/30 border-white/5 p-12 text-center flex flex-col items-center gap-6">
+        <div className="glass-card bg-surface/30 border-white/5 p-6 md:p-12 text-center flex flex-col items-center gap-6">
           <h2 className="heading-2">{eventsContent.hosting.title}</h2>
           <p className="body-text max-w-2xl opacity-70">
             {eventsContent.hosting.description}

@@ -83,7 +83,7 @@ export default async function Home() {
 
       {/* 2. WHAT IS TTA? */}
       <Section id="about" eyebrow="Definition" title="What is TTA?" className="bg-surface/5">
-        <div className="glass-card flex flex-col justify-center gap-8 bg-accent/5 ring-1 ring-accent/10 p-12">
+        <div className="glass-card flex flex-col justify-center gap-8 bg-accent/5 ring-1 ring-accent/10 p-6 md:p-12">
           <p className="heading-2 opacity-95 leading-tight max-w-[50ch]">
             TTA | The Thinking Architect is an intellectual platform for the built environment.
           </p>
@@ -108,7 +108,7 @@ export default async function Home() {
       <Section id="numbers" eyebrow="Dynamic Impact" title="Community Pulse">
         <div className="bento-grid">
           {stats.map((stat: any) => (
-            <div key={stat.label} className="bento-item-small glass-card flex flex-col items-center justify-center gap-3 group hover:ring-1 hover:ring-accent/30 transition-all text-center p-10">
+            <div key={stat.label} className="bento-item-small glass-card flex flex-col items-center justify-center gap-3 group hover:ring-1 hover:ring-accent/30 transition-all text-center p-6 md:p-10">
               <AnimatedCounter value={stat.value} className="text-6xl font-black text-accent tracking-tighter" />
               <div className="small-text opacity-70 tracking-[0.3em] uppercase font-bold text-[11px]">{stat.label}</div>
             </div>
@@ -118,7 +118,7 @@ export default async function Home() {
 
       {/* 4. UPCOMING EVENT */}
       <Section id="upcoming" eyebrow="Pulse" title="Next Session" className="bg-surface/5">
-        <div className="glass-card flex flex-col md:flex-row gap-12 relative overflow-hidden group">
+        <div className="glass-card flex flex-col md:flex-row gap-8 md:gap-12 relative overflow-hidden group">
           {upcomingEvent?.flyer_url ? (
             <div className="absolute inset-0 opacity-[0.05] group-hover:opacity-[0.1] transition-opacity duration-700 pointer-events-none">
               <Image src={upcomingEvent.flyer_url} alt="" fill className="object-cover scale-150 blur-3xl" />
@@ -187,7 +187,7 @@ export default async function Home() {
 
       {/* 6. JOIN CTA STRIP */}
       <Section id="cta" className="py-24 md:py-32" watermark={true}>
-        <div className="bg-accent text-[#050505] flex flex-col items-center text-center gap-12 py-24 px-10 rounded-[64px] relative overflow-hidden shadow-[0_30px_60px_rgba(217,79,43,0.3)]">
+        <div className="bg-accent text-[#050505] flex flex-col items-center text-center gap-12 py-16 px-6 md:py-24 md:px-10 rounded-[32px] md:rounded-[64px] relative overflow-hidden shadow-[0_30px_60px_rgba(217,79,43,0.3)]">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_#000_1px,_transparent_1px)] bg-[size:40px_40px]" />
           
           <div className="relative z-10 flex flex-col items-center gap-6">

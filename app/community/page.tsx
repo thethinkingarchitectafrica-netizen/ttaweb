@@ -20,7 +20,7 @@ export default async function CommunityPage() {
       <Section id="platforms" className="pt-0">
         <div className="flex flex-col md:flex-row justify-center gap-8 max-w-5xl mx-auto reveal" style={{ animationDelay: "0.4s" }}>
           {platforms.map((platform: any) => (
-            <div key={platform.id} className="glass-card flex-1 flex flex-col items-center text-center p-12 bg-white/[0.02] border-white/5 hover:border-accent/20 transition-all group">
+            <div key={platform.id} className="glass-card flex-1 flex flex-col items-center text-center p-6 md:p-12 bg-white/[0.02] border-white/5 hover:border-accent/20 transition-all group">
               <div className="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center text-accent mb-8 group-hover:scale-110 transition-transform">
                 {platform.id === "whatsapp" ? <MessageCircle size={40} /> : <Send size={40} />}
               </div>

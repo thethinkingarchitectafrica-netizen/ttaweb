@@ -66,7 +66,7 @@ export default function ContactPage() {
         </p>
       </section>
 
-      <section className="container max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 reveal" style={{ animationDelay: "0.2s" }}>
+      <section className="container max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 reveal" style={{ animationDelay: "0.2s" }}>
         {/* Contact Links */}
         <div className="flex flex-col gap-10">
           <div>
@@ -89,7 +89,7 @@ export default function ContactPage() {
         </div>
 
         {/* Partnership Form */}
-        <div className="glass-card p-10 bg-surface/30 border-white/5">
+        <div className="glass-card p-6 md:p-10 bg-surface/30 border-white/5">
           <h2 className="heading-3 text-accent uppercase tracking-widest mb-8">{partnerships.title}</h2>
           {formStatus === "success" ? (
              <div className="py-16 text-center flex flex-col items-center gap-6 animate-in fade-in zoom-in duration-500">
