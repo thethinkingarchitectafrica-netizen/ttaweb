@@ -179,8 +179,8 @@ select:focus-visible {
 
 .heading-1 {
   font-family: var(--font-display), sans-serif;
-  font-size: clamp(48px, 9vw, 92px);
-  line-height: 0.9;
+  font-size: clamp(40px, 8vw, 92px);
+  line-height: 0.95;
   font-weight: 600;
   letter-spacing: -0.05em;
   margin: 0;
@@ -213,6 +213,7 @@ select:focus-visible {
 
 .editorial {
   font-family: var(--font-display), sans-serif;
+  font-size: clamp(28px, 6vw, 48px);
   font-style: italic;
   font-weight: 400;
   letter-spacing: -0.02em;
@@ -335,7 +336,11 @@ footer {
 
 @media (max-width: 768px) {
   .heading-1 {
-    font-size: 48px;
+    font-size: 40px;
+  }
+  
+  .editorial {
+    font-size: 32px;
   }
   
   .glass-card {

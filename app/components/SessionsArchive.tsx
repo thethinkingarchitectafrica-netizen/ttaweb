@@ -63,12 +63,12 @@ export default function SessionsArchive({ initialSessions }: { initialSessions: 
           </div>
 
           {/* Categories */}
-          <div className="flex items-center gap-2 p-1 bg-white/5 rounded-2xl w-fit">
+          <div className="flex items-center gap-2 p-1 bg-white/5 rounded-2xl w-full md:w-fit overflow-x-auto custom-scrollbar pb-2 md:pb-1">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-6 py-3 rounded-[14px] text-xs font-bold uppercase tracking-widest transition-all duration-300 ${
+                className={`px-4 md:px-6 py-2 md:py-3 rounded-[14px] text-[10px] md:text-xs font-bold uppercase tracking-widest transition-all duration-300 whitespace-nowrap ${
                   activeCategory === cat
                     ? "bg-accent text-black shadow-lg"
                     : "text-white/40 hover:text-white hover:bg-white/5"

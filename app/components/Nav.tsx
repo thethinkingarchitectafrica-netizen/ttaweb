@@ -23,14 +23,14 @@ export default function Nav() {
   }, [open]);
 
   return (
-    <header className="sticky top-4 z-40 w-full px-4 mb-2">
-      <div className="container glass-card mx-auto flex items-center justify-between h-16 py-0 px-6 sm:px-8">
+    <header className="sticky top-2 z-40 w-full px-4 md:px-6 mb-6">
+      <div className="container glass-card mx-auto flex items-center justify-between h-16 py-0 px-4 sm:px-8">
         <Link 
           href="/" 
           className="hover:opacity-100 transition-opacity flex items-center py-2" 
           aria-label="The Thinking Architect"
         >
-          <Logo variant="monogram" size={36} className="text-white" />
+          <Logo variant="monogram" size={32} className="text-white md:w-[36px] md:h-[36px]" />
         </Link>
         <nav className="hidden md:flex items-center gap-8 small-text">
           {navLinks.map((link) => (
@@ -54,7 +54,7 @@ export default function Nav() {
             onClick={handleToggle}
             aria-label="Toggle navigation"
             aria-expanded={open}
-            className="p-2 text-foreground/80"
+            className="p-1 -mr-1 text-foreground/80 hover:text-white transition-colors"
           >
             {open ? (
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>

@@ -42,7 +42,7 @@ export default function Footer() {
             </div>
           </div>
           
-          <div className="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
+          <div className="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8">
             <div className="flex flex-col gap-4">
               <div className="section-eyebrow !mb-0 text-[11px]">Navigate</div>
               <nav className="flex flex-col gap-2">
@@ -53,20 +53,9 @@ export default function Footer() {
                 ))}
               </nav>
             </div>
-            
-            <div className="flex flex-col gap-4">
-              <div className="section-eyebrow !mb-0 text-[11px]">Community</div>
-              <nav className="flex flex-col gap-2">
-                {footerLinks.community.map((link) => (
-                  <a key={link.label} href={link.href} className="body-text text-sm hover:text-white">
-                    {link.label}
-                  </a>
-                ))}
-              </nav>
-            </div>
 
-            <div className="flex flex-col gap-4 col-span-2 sm:col-span-1">
-              <div className="section-eyebrow !mb-0 text-[11px]">Contact</div>
+            <div className="flex flex-col gap-4">
+              <div className="section-eyebrow !mb-0 text-[11px]">Contact & Community</div>
               <div className="flex flex-col gap-2">
                 <a href={`mailto:${footerLinks.contact.email}`} className="body-text text-sm break-all hover:text-white">
                   {footerLinks.contact.email}

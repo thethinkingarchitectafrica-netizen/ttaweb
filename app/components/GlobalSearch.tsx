@@ -113,7 +113,7 @@ export default function GlobalSearch() {
       {/* Search Trigger Button (for UI availability) */}
       <button 
         onClick={() => setIsOpen(true)}
-        className="hidden md:flex items-center gap-3 px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-white/40 hover:text-white hover:bg-white/10 transition-all ml-4"
+        className="flex w-full md:w-auto items-center justify-between md:justify-start gap-3 px-3 md:px-3 py-2 md:py-1.5 bg-white/5 border border-white/10 rounded-lg text-white/40 hover:text-white hover:bg-white/10 transition-all md:ml-4"
       >
         <Search size={16} />
         <span className="text-xs font-medium">Search Library</span>
